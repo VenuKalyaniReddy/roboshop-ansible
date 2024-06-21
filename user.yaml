@@ -58,7 +58,7 @@
 
   - name: get the user count 
     ansible.builtin.command: mongo --host mongodb.bigmatrix.in --quiet --eval 'db = db.getSiblingDB("user"); db.products.count()'
-    register: product_count 
+    register: product_count ="0"
 
 
   # - name: print the count 
