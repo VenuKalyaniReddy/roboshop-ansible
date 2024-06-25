@@ -57,7 +57,7 @@
       state: present
 
   - name: get the catageories count 
-    ansible.builtin.command: mongo --host mongodb.bigmatrix.in --quiet --eval 'db = db.getSiblingDB("catalogue"); db.products.count()'
+    ansible.builtin.command: mongo --host mongodb.aidevops.website --quiet --eval 'db = db.getSiblingDB("catalogue"); db.products.count()'
     register: product_count 
 
 
@@ -66,7 +66,7 @@
   #     msg: "product count : {{product_count}}"
 
   - name: load cataloge data 
-    ansible.builtin.command: mongo --host mongodb.bigmatrix.in < /app/schema/catalogue.js
+    ansible.builtin.command: mongo --host mongodb.aidevops.website < /app/schema/catalogue.js
     when: product_count.stdout == "0" #keep double qoutes
 
   - name: start and enable catalogue 
