@@ -13,7 +13,7 @@
 
 
     - name: install MYSQL 
-      ansible.builtin.pacakge:
+      ansible.builtin.dnf:
         name: mysql-community-server 
         state: present
 
