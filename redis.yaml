@@ -16,6 +16,7 @@
     ansible.builtin.package:
         name: redis
         state: present
+        
   - name: allow remote connectios
     ansible.builtin.replace:
         path: /etc/redis.conf
