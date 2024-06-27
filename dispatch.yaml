@@ -52,7 +52,7 @@
         daemon_reload: true
 
     - name: start and enable dispatch 
-    ansible.builtin.service:
+      ansible.builtin.service:
       name: dispatch
       enabled: yes
       state: started
