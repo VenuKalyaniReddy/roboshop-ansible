@@ -33,13 +33,13 @@
         remote_src: yes
 
     - name: Install dependencies
-      ansible.builtin.command:
-        with_items:
+      ansible.builtin.command: "{{ item }}"
+      args:
+        chdir: /app
+      with_items:
           - go mod init dispatch
           - go get
           - go build
-      args:
-        chdir: /app
 
     - name: Copy dispatch service
       ansible.builtin.copy:
