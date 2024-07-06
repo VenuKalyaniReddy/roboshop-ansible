@@ -32,7 +32,7 @@
         dest: /app
         remote_src: yes
 
-    - name: Install dependencies
+    - name: Install dependencies  #list of packages we need to install
       ansible.builtin.command: "{{ item }}"
       args:
         chdir: /app
